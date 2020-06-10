@@ -57,7 +57,7 @@ Tablesteps<- aggregate(activity$steps ~ activity$date, FUN=sum, )
 colnames(Tablesteps)<- c("date", "steps")
 hist(Tablesteps$steps, breaks=5, xlab = "steps", main = "Total number of steps per day of the week")
 ```
-
+![Rplot1](Figures/Rplot1.png) 
 
 Finally we are instructed to calculate and report the mean and median values for the total number of steps taken per day. The following is the R code for the task. The following values are the mean and median number of steps per day
 ```{r, echo=FALSE}
@@ -74,7 +74,7 @@ stepsdata<- activity[!is.na(activity$steps),]
 stepsPerInterval<-aggregate(steps~interval, data=stepsdata, mean)
 plot(steps~interval, data=stepsPerInterval,type="l")
 ```
-
+![Rplot2](Figures/Rplot2.png) 
 
 ## Imputing missing values
 
@@ -112,7 +112,7 @@ hist(total_steps$steps)
 mean(total_steps$steps)
 median(total_steps$steps)
 ```
-
+![Rplot3](Figures/Rplot3.png) 
 
 The following values are mean and median values calculated from the steps data after imputation (which are the same as before imputation: 
 
@@ -150,4 +150,4 @@ xyplot(steps ~ interval | day, stepsByDay, type="l", layout = c(1,2),
     Main="activity during weekdays and weekends")
 ```
 
-
+![Rplot4](Figures/Rplot4.png) 
